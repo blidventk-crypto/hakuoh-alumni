@@ -259,6 +259,14 @@
       white-space: nowrap;
     }
 
+    .hero h1,
+    .hero h2,
+    .join h2,
+    .detail-school {
+      overflow-wrap: normal;
+      word-break: keep-all;
+    }
+
     .view-actions {
       display: flex;
       justify-content: flex-end;
@@ -684,6 +692,13 @@
       margin-bottom: 34px;
     }
 
+    .detail-company-text {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0 .4em;
+    }
+
     .detail-company-icon,
     .detail-motto-icon {
       display: grid;
@@ -938,6 +953,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 0 .25em;
+        min-width: 0;
       }
 
       .crest {
@@ -961,11 +977,19 @@
       }
 
       .hero h1 {
-        font-size: 31px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 .12em;
+        font-size: 29px;
         text-wrap: balance;
       }
 
       .hero h2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 .2em;
         font-size: 20px;
         line-height: 1.55;
         text-wrap: balance;
@@ -1067,6 +1091,13 @@
         text-wrap: balance;
       }
 
+      .join h2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 .2em;
+      }
+
       .join p,
       .form-box p {
         line-height: 1.85;
@@ -1144,6 +1175,10 @@
         text-wrap: balance;
       }
 
+      .detail-company-text {
+        justify-content: center;
+      }
+
       .detail-intro {
         margin-bottom: 30px;
         font-size: 16px;
@@ -1197,7 +1232,7 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <h1><span class="no-break">つながる、広がる、</span><span class="no-break">白鷗大学足利中学校の輪</span></h1>
+        <h1><span class="no-break">つながる、広がる、</span><span class="no-break">白鷗大学足利中学校</span><span class="no-break">の輪</span></h1>
         <div class="hero-line" aria-hidden="true"></div>
         <h2><span class="no-break">白鷗大学足利中学校</span><span class="no-break">同窓生プロフィール一覧</span></h2>
         <p>1期生から最新卒業生まで、同窓生同士のつながりを深めましょう</p>
@@ -1286,7 +1321,7 @@
           <svg viewBox="0 0 24 24" fill="none"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm12.5 10v-2a4 4 0 0 0-3-3.87m-2-11.9a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <div>
-          <h2><span class="no-break">白鷗大学足利中学校の輪に、</span><span class="no-break">あなたも参加しませんか?</span></h2>
+          <h2><span class="no-break">白鷗大学足利中学校</span><span class="no-break">の輪に、</span><span class="no-break">あなたも参加しませんか?</span></h2>
           <p>同窓生プロフィールを掲載して、世代を超えたつながりを広げましょう。<br>ビジネスや地域活動、趣味のつながりなど、きっかけは人それぞれ。<br>あなたの登録をお待ちしています！</p>
         </div>
       </div>
@@ -1380,7 +1415,7 @@
             <span class="detail-company-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l8-4v18M19 21V10l-6-3M8 10h2M8 14h2M8 18h2M15 13h2M15 17h2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <span><span class="no-break">${profile.company}</span> <span class="no-break">${profile.position}</span></span>
+            <span class="detail-company-text"><span>${profile.company}</span><span class="no-break">${profile.position}</span></span>
           </div>
           <p class="detail-intro">${profile.intro}</p>
           <div class="detail-motto">
@@ -1511,6 +1546,7 @@
   </script>
 </body>
 </html>
+
 
 
 
